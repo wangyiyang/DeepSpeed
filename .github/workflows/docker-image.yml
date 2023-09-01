@@ -14,6 +14,6 @@ jobs:
     - name: Login to DockerHub Registry
       run: echo ${{ secrets.DOCKERHUB_PWD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag wangyiyang/deepspeed:23.9.1
+      run: docker build . --file docker/Dockerfile --tag wangyiyang/deepspeed:23.9.1
     - name: Push the tagged Docker image
       run: docker push wangyiyang/deepspeed:23.9.1
