@@ -14,4 +14,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file docker/Dockerfile --tag wangyiyang/deepspeed:23.9.1
     - name: Push the tagged Docker image
-      run: docker push wangyiyang/deepspeed:23.9.1
+      run: docker push wangyiyang/deepspeed:23.9.4
