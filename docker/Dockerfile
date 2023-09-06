@@ -28,9 +28,7 @@ RUN apt-get install -y python3 python3-dev && \
     curl -O https://bootstrap.pypa.io/get-pip.py && \
         python get-pip.py && \
         rm get-pip.py && \
-    pip install --upgrade pip && \
-    # Print python an pip version
-    python -V && pip -V
+    pip install --upgrade pip
 
 ##############################################################################
 # TensorFlow
