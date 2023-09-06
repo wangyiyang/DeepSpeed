@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-devel-ubuntu18.04
+FROM FROM nvidia/cuda:11.7.1-devel-ubuntu18.04
 
 ##############################################################################
 # Installation/Basic Utilities
