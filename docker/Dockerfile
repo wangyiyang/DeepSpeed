@@ -40,14 +40,14 @@ RUN cp /etc/ssh/sshd_config ${STAGE_DIR}/sshd_config && \
 ##############################################################################
 # Mellanox OFED
 ##############################################################################
-ENV MLNX_OFED_VERSION=4.6-1.0.1.1
+# ENV MLNX_OFED_VERSION=4.6-1.0.1.1
 RUN apt-get install -y libnuma-dev
-RUN cd ${STAGE_DIR} && \
-        wget -q -O - http://www.mellanox.com/downloads/ofed/MLNX_OFED-${MLNX_OFED_VERSION}/MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64.tgz | tar xzf - && \
-        cd MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64 && \
-        ./mlnxofedinstall --user-space-only --without-fw-update --all -q && \
-        cd ${STAGE_DIR} && \
-        rm -rf ${STAGE_DIR}/MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64*
+# RUN cd ${STAGE_DIR} && \
+#         wget -q -O - http://www.mellanox.com/downloads/ofed/MLNX_OFED-${MLNX_OFED_VERSION}/MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64.tgz | tar xzf - && \
+#         cd MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64 && \
+#         ./mlnxofedinstall --user-space-only --without-fw-update --all -q && \
+#         cd ${STAGE_DIR} && \
+#         rm -rf ${STAGE_DIR}/MLNX_OFED_LINUX-${MLNX_OFED_VERSION}-ubuntu18.04-x86_64*
 
 ##############################################################################
 # nv_peer_mem
