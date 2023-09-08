@@ -92,17 +92,18 @@ RUN mv /usr/local/mpi/bin/mpirun /usr/local/mpi/bin/mpirun.real && \
 ##############################################################################
 # Python
 ##############################################################################
-ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHON_VERSION=3
-RUN apt-get install -y python3 python3-dev && \
-        rm -f /usr/bin/python && \
-        ln -s /usr/bin/python3 /usr/bin/python && \
-        curl -O https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
-        python get-pip.py && \
-        rm get-pip.py && \
-        pip install --upgrade pip && \
-        # Print python an pip version
-        python -V && pip -V
+# ENV DEBIAN_FRONTEND=noninteractive
+# ENV PYTHON_VERSION=3
+# RUN apt-get install -y python3 python3-dev && \
+#         rm -f /usr/bin/python && \
+#         ln -s /usr/bin/python3 /usr/bin/python && \
+#         curl -O https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
+#         python get-pip.py && \
+#         rm get-pip.py && \
+#         pip install --upgrade pip && \
+#         # Print python an pip version
+#         python -V && pip -V
+RUN pip install --upgrade pip
 RUN pip install pyyaml
 RUN pip install ipython
 
@@ -111,7 +112,7 @@ RUN pip install ipython
 ##############################################################################
 # ENV TENSORFLOW_VERSION=2.12.0
 # RUN pip install tensorflow-gpu==${TENSORFLOW_VERSION}
-RUN pip install tensorflow-gpu
+# RUN pip install tensorflow-gpu
 
 ##############################################################################
 # Some Packages
