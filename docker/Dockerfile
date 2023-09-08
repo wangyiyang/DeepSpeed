@@ -92,18 +92,14 @@ RUN mv /usr/local/mpi/bin/mpirun /usr/local/mpi/bin/mpirun.real && \
 ##############################################################################
 # Python
 ##############################################################################
-# ENV DEBIAN_FRONTEND=noninteractive
-# ENV PYTHON_VERSION=3
-# RUN apt-get install -y python3 python3-dev && \
-#         rm -f /usr/bin/python && \
-#         ln -s /usr/bin/python3 /usr/bin/python && \
-#         curl -O https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
-#         python get-pip.py && \
-#         rm get-pip.py && \
-#         pip install --upgrade pip && \
-#         # Print python an pip version
-#         python -V && pip -V
-RUN pip install --upgrade pip
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHON_VERSION=3
+RUN apt-get install -y python3 python3-dev python3-pip && \
+        rm -f /usr/bin/python && \
+        ln -s /usr/bin/python3 /usr/bin/python && \
+        pip install --upgrade pip && \
+        # Print python an pip version
+        python -V && pip -V
 RUN pip install pyyaml
 RUN pip install ipython
 
