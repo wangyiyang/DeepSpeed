@@ -144,8 +144,7 @@ RUN pip install psutil \
         sklearn \
         scikit-learn \
         nvidia-ml-py3 \
-        mpi4py \
-        cupy-cuda100
+        mpi4py 
 
 ##############################################################################
 ## SSH daemon port inside container cannot conflict with host OS port
