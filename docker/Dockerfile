@@ -18,7 +18,7 @@ RUN apt-get update && \
         cmake g++ gcc \
         curl wget vim tmux emacs less unzip \
         htop iftop iotop ca-certificates openssh-client openssh-server \
-        rsync iputils-ping net-tools sudo 
+        rsync iputils-ping net-tools sudo debhelper
         # llvm-9-dev
 
 ##############################################################################
