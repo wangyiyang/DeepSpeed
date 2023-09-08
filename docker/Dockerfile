@@ -109,8 +109,9 @@ RUN pip install ipython
 ##############################################################################
 # TensorFlow
 ##############################################################################
-ENV TENSORFLOW_VERSION=2.12.0
-RUN pip install tensorflow-gpu==${TENSORFLOW_VERSION}
+# ENV TENSORFLOW_VERSION=2.12.0
+# RUN pip install tensorflow-gpu==${TENSORFLOW_VERSION}
+RUN pip install tensorflow-gpu
 
 ##############################################################################
 # Some Packages
